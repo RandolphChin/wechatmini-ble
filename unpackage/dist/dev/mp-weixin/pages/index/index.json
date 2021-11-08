@@ -1,0 +1,9 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "u-tag": "/uview-ui/components/u-tag/u-tag",
+    "cl-icon": "/components/cl-icon/index",
+    "u-button": "/uview-ui/components/u-button/u-button",
+    "cl-test": "/components/cl-test/index"
+  }
+}

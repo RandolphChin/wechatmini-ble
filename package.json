@@ -1,0 +1,16 @@
+{
+  "name": "scalfford",
+  "version": "1.0.0",
+  "description": "-\t组件使用easycom模式 cl-*(可在pages里面修改)",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "uni-read-pages": "^1.0.5",
+    "uni-simple-router": "^2.0.7"
+  }
+}

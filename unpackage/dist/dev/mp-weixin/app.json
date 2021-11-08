@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/newpage/newpage",
+    "pages/public/richPage/richPage",
+    "pages/test/demo",
+    "pages/login/login",
+    "pages/me/userInfo/userInfo"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "height": "50px",
+    "fontSize": "10px",
+    "iconWidth": "24px",
+    "spacing": "3px",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/image/ic_menu_choice_nor.png",
+        "selectedIconPath": "static/image/ic_menu_choice_pressed.png",
+        "text": "Index"
+      },
+      {
+        "pagePath": "pages/test/demo",
+        "text": "Test"
+      },
+      {
+        "pagePath": "pages/me/userInfo/userInfo",
+        "text": "Me"
+      }
+    ]
+  },
+  "usingComponents": {}
+}
