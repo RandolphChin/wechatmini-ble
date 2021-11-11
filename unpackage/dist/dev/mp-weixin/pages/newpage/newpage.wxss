@@ -25,23 +25,22 @@
 /* 透明度 */
 /* 文章场景相关 */
 /* uni.scss */
-.wrap.data-v-94ec6dd2 {
-  padding: 24rpx;
+.dev-signal.data-v-75410134 {
+  color: #55aa00;
 }
-.u-row.data-v-94ec6dd2 {
-  margin: 40rpx 0;
+.conn-state.data-v-75410134 {
+  color: #55aa00;
 }
-.demo-layout.data-v-94ec6dd2 {
-  height: 80rpx;
-  border-radius: 8rpx;
+.conn-state-unconect.data-v-75410134 {
+  color: #ff0000;
+  margin-left: 10rpx;
 }
-.bg-purple.data-v-94ec6dd2 {
-  background: #d3dce6;
+.conn-state-connecting.data-v-75410134 {
+  color: #0000ff;
+  margin-left: 10rpx;
 }
-.bg-purple-light.data-v-94ec6dd2 {
-  background: #e5e9f2;
-}
-.bg-purple-dark.data-v-94ec6dd2 {
-  background: #99a9bf;
+.conn-state-connected.data-v-75410134 {
+  color: #55aa00;
+  margin-left: 10rpx;
 }
 

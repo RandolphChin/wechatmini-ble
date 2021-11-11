@@ -20,7 +20,7 @@
 		}, {
 			"path": "pages/newpage/newpage",
 			"name": "newpage",
-			"aliasPath": "/newpage/:id",
+			"aliasPath": "/newpage/:deviceId/:name/:rssi",
 			"meta": {
 				"title": "测试"
 			},

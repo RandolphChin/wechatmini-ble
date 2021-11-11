@@ -10109,7 +10109,7 @@ var _uniSimpleRouter = __webpack_require__(/*! uni-simple-router */ 16); // rout
 var router = (0, _uniSimpleRouter.createRouter)({
   encodeURI: false,
   platform: "mp-weixin",
-  routes: [{"path":"/pages/index/index","name":"index","meta":{"title":"首页"},"aliasPath":"/"},{"path":"/pages/newpage/newpage","name":"newpage","meta":{"title":"测试"},"aliasPath":"/newpage/:id"},{"path":"/pages/public/richPage/richPage","name":"richPage","meta":{"title":"富文本页"}},{"path":"/pages/test/demo","name":"demo"},{"path":"/pages/login/login","name":"login"},{"path":"/pages/me/userInfo/userInfo","name":"userInfo"}] });
+  routes: [{"path":"/pages/index/index","name":"index","meta":{"title":"首页"},"aliasPath":"/"},{"path":"/pages/newpage/newpage","name":"newpage","meta":{"title":"测试"},"aliasPath":"/newpage/:deviceId/:name"},{"path":"/pages/public/richPage/richPage","name":"richPage","meta":{"title":"富文本页"}},{"path":"/pages/test/demo","name":"demo"},{"path":"/pages/login/login","name":"login"},{"path":"/pages/me/userInfo/userInfo","name":"userInfo"}] });
 
 
 //全局路由前置守卫
@@ -12911,7 +12911,21 @@ module.exports = {
 /* 123 */,
 /* 124 */,
 /* 125 */,
-/* 126 */
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */,
+/* 133 */,
+/* 134 */,
+/* 135 */,
+/* 136 */,
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */
 /*!***************************************************************************!*\
   !*** E:/uniapp-template/uview-ui/components/u-parse/libs/MpHtmlParser.js ***!
   \***************************************************************************/
@@ -12925,9 +12939,9 @@ module.exports = {
  * @author JinYufeng
  * @listens MIT
  */
-var cfg = __webpack_require__(/*! ./config.js */ 127),
+var cfg = __webpack_require__(/*! ./config.js */ 141),
 blankChar = cfg.blankChar,
-CssHandler = __webpack_require__(/*! ./CssHandler.js */ 128),
+CssHandler = __webpack_require__(/*! ./CssHandler.js */ 142),
 windowWidth = uni.getSystemInfoSync().windowWidth;
 var emoji;
 
@@ -13501,7 +13515,7 @@ module.exports = MpHtmlParser;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 127 */
+/* 141 */
 /*!*********************************************************************!*\
   !*** E:/uniapp-template/uview-ui/components/u-parse/libs/config.js ***!
   \*********************************************************************/
@@ -13590,14 +13604,14 @@ if (wx.canIUse('editor')) {
 module.exports = cfg;
 
 /***/ }),
-/* 128 */
+/* 142 */
 /*!*************************************************************************!*\
   !*** E:/uniapp-template/uview-ui/components/u-parse/libs/CssHandler.js ***!
   \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var cfg = __webpack_require__(/*! ./config.js */ 127),
+var cfg = __webpack_require__(/*! ./config.js */ 141),
 isLetter = function isLetter(c) {return c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z';};
 
 function CssHandler(tagStyle) {

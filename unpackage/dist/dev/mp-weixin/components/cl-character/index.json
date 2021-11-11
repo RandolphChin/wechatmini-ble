@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "u-collapse": "/uview-ui/components/u-collapse/u-collapse",
+    "u-collapse-item": "/uview-ui/components/u-collapse-item/u-collapse-item",
+    "u-card": "/uview-ui/components/u-card/u-card"
+  },
+  "component": true
+}
