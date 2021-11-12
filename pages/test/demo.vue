@@ -30,12 +30,16 @@ export default {
 	},
 	methods: {
 		startScan() {
+			// 初始化蓝牙模块
+			this.initBluetoothAdapter();
+			//同时监听蓝牙连接状态
+			this.listenBluetoothState();
 			if(!this.blueToothOpen){
 				this.showNotice();
 				return;
 			}
 			this.isScan = true;
-		this.startBluetoothDeviceDiscovery();
+			this.startBluetoothDeviceDiscovery();
 		},
 		stopScan() {
 			this.stopBluetoothDevicesDiscovery();
@@ -49,6 +53,11 @@ export default {
 						});
 		},
 		connectDev(connectable,deviceId,deviceName,rssi){
+			let queryDevice = {};
+			queryDevice.deviceId=deviceId;
+			queryDevice.name=deviceName;
+			queryDevice.rssi=rssi;
+			uni.setStorageSync("queryDevice",queryDevice);
 			// 停止搜索
 			this.stopBluetoothDevicesDiscovery();
 			 this.$Router.push({
@@ -70,6 +79,7 @@ export default {
 				},
 				fail: e => {
 					console.log('初始化蓝牙失败，错误码：' + (e.errCode || e.errMsg));
+					this.isScan=false;
 					this.showNotice();
 				}
 			});
@@ -94,6 +104,13 @@ export default {
 					//this.createBLEConnection();
 					//关闭连接
 					this.closeBluetoothAdapter();
+				}else{
+					uni.showToast({
+						icon: "none",
+						title: "蓝牙上线了！",
+						mask: false,
+						duration: 3000
+					});
 				}
 			});
 		},
