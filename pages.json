@@ -8,6 +8,14 @@
 
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			"path":"pages/test/demo",
+			"name":"demo",
+			"style": {
+				"navigationBarTitleText": "海葵",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
 			"path": "pages/index/index",
 			"name": "index",
 			"aliasPath": "/",
@@ -17,18 +25,20 @@
 			"style": {
 				"navigationStyle": "custom"
 			}
-		}, {
+		}, 
+		{
 			"path": "pages/newpage/newpage",
 			"name": "newpage",
 			"aliasPath": "/newpage/:deviceId/:name/:rssi",
 			"meta": {
-				"title": "测试"
+				"title": "蓝牙"
 			},
 			"style": {
-				"navigationBarTitleText": "测试",
+				"navigationBarTitleText": "海葵星蓝牙",
 				"enablePullDownRefresh": false
 			}
-		}, {
+		}, 
+		{
 			// query 方式传参
 			"path": "pages/public/richPage/richPage",
 			// params 传参
@@ -41,14 +51,6 @@
 				"enablePullDownRefresh": false
 			}
 
-		},
-		{
-			"path":"pages/test/demo",
-			"name":"demo",
-			"style": {
-				"navigationBarTitleText": "Test",
-				"enablePullDownRefresh": false
-			}
 		},
 		{
 			"path":"pages/login/login",
@@ -71,7 +73,7 @@
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
+		"navigationBarTitleText": "海葵星",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
 	},
@@ -84,19 +86,26 @@
 				"fontSize": "10px",
 				"iconWidth": "24px",
 				"spacing": "3px",
-				"list":[{
+				 "list":[
+			/* 
+					{
 					"pagePath":"pages/index/index",
 					 "iconPath": "static/image/ic_menu_choice_nor.png",
 					 "selectedIconPath": "static/image/ic_menu_choice_pressed.png",
 					"text":"Index"
-				},
+				}, 
+				 */
 				{
 					"pagePath":"pages/test/demo",
-					"text":"Test"
+					"iconPath": "static/image/bluetooth_nor.png",
+					"selectedIconPath": "static/image/bluetooth_pressed.png",
+					"text":"蓝牙"
 				},
 				{
 					"pagePath":"pages/me/userInfo/userInfo",
-					"text":"Me"
+					"iconPath": "static/image/setting_nor.png",
+					"selectedIconPath": "static/image/setting_pressed.png",
+					"text":"设置"
 				}
 				]
 	}

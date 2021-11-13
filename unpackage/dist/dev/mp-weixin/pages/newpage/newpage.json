@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "测试",
+  "navigationBarTitleText": "海葵星蓝牙",
   "enablePullDownRefresh": false,
   "usingComponents": {
     "u-card": "/uview-ui/components/u-card/u-card",

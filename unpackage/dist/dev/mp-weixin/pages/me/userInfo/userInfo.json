@@ -2,9 +2,6 @@
   "navigationBarTitleText": "Me",
   "enablePullDownRefresh": true,
   "usingComponents": {
-    "u-avatar": "/uview-ui/components/u-avatar/u-avatar",
-    "u-card": "/uview-ui/components/u-card/u-card",
-    "u-icon": "/uview-ui/components/u-icon/u-icon",
-    "u-loadmore": "/uview-ui/components/u-loadmore/u-loadmore"
+    "u-avatar": "/uview-ui/components/u-avatar/u-avatar"
   }
 }

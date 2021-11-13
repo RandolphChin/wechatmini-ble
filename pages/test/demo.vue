@@ -19,23 +19,31 @@ export default {
 		return {
 			isScan: false,
 			blueToothOpen: false,
+			locationOpen: true,
 			devices: []
 		};
 	},
 	onShow() {
+		this.checkLocation();
 		// 初始化蓝牙模块
 		this.initBluetoothAdapter();
 		//同时监听蓝牙连接状态
 		this.listenBluetoothState();
 	},
 	methods: {
+		
 		startScan() {
-			// 初始化蓝牙模块
+			 // 初始化蓝牙模块
 			this.initBluetoothAdapter();
 			//同时监听蓝牙连接状态
 			this.listenBluetoothState();
+			this.checkLocation();
+			if(!this.locationOpen){
+				this.showNotice("请开启定位");
+				return;
+			}
 			if(!this.blueToothOpen){
-				this.showNotice();
+				this.showNotice("请开启蓝牙");
 				return;
 			}
 			this.isScan = true;
@@ -44,12 +52,12 @@ export default {
 		stopScan() {
 			this.stopBluetoothDevicesDiscovery();
 		},
-		showNotice(){
+		showNotice(msg){
 			uni.showToast({
 							icon: "none",
-							title: "请开启蓝牙",
+							title: msg,
 							mask: true,
-							duration: 1000
+							duration: 2000
 						});
 		},
 		connectDev(connectable,deviceId,deviceName,rssi){
@@ -70,21 +78,24 @@ export default {
 			 });
 		},
 		initBluetoothAdapter(){
+			let that = this;
 			//在页面加载时候初始化蓝牙适配器
 			uni.openBluetoothAdapter({
 				success: e => {
 					console.log('初始化蓝牙成功:' + e.errMsg);
-					this.blueToothOpen = true;
+					that.blueToothOpen = true;
 					console.log(this.blueToothOpen);
 				},
 				fail: e => {
 					console.log('初始化蓝牙失败，错误码：' + (e.errCode || e.errMsg));
-					this.isScan=false;
-					this.showNotice();
+					that.blueToothOpen = true;
+					that.isScan=false;
+					that.showNotice("请打开蓝牙");
 				}
 			});
 		},
 		listenBluetoothState(){
+			let that = this;
 			uni.onBLEConnectionStateChange(res => {
 				// 该方法回调中可以用于处理连接意外断开等异常情况
 				console.log(`蓝牙连接状态 -------------------------->`);
@@ -92,25 +103,13 @@ export default {
 				if (!res.connected) {
 					if (this.isScan) return;
 					console.log('断开低功耗蓝牙成功:');
-
-					uni.showToast({
-						icon: "none",
-						title: "蓝牙已经断开！",
-						mask: false,
-						duration: 3000
-					});
-
+					that.showNotice("蓝牙已经断开");
 					//在这里尝试重连
 					//this.createBLEConnection();
 					//关闭连接
-					this.closeBluetoothAdapter();
+					that.closeBluetoothAdapter();
 				}else{
-					uni.showToast({
-						icon: "none",
-						title: "蓝牙上线了！",
-						mask: false,
-						duration: 3000
-					});
+					that.showNotice("蓝牙已经连接");
 				}
 			});
 		},
@@ -118,16 +117,11 @@ export default {
 		 * 断开蓝牙连接
 		 */
 		closeBluetoothAdapter() {
+			let that = this;
 			uni.closeBluetoothAdapter({
 				success: res => {
 					console.log('断开蓝牙模块成功');
-
-					uni.showToast({
-						icon: "none",
-						title: "蓝牙已经断开！",
-						mask: false,
-						duration: 3000
-					});
+					that.showNotice("蓝牙已经断开");
 				}
 			});
 		},
@@ -144,11 +138,7 @@ export default {
 						},
 						fail: res => {
 							console.log("查找设备失败!");
-							uni.showToast({
-								icon: "none",
-								title: "查找设备失败！",
-								duration: 3000
-							})
+							that.showNotice("查找设备失败");
 						}
 					});
 				} else {
@@ -160,9 +150,10 @@ export default {
 		 * 停止搜索蓝牙设备
 		 */
 		stopBluetoothDevicesDiscovery() {
+			let that = this;
 			uni.stopBluetoothDevicesDiscovery({
 				success: e => {
-					this.isScan = false;
+					that.isScan = false;
 					console.log('停止搜索蓝牙设备:' + e.errMsg);
 				},
 				fail: e => {
@@ -198,6 +189,32 @@ export default {
 					console.log('获取蓝牙设备错误，错误码：' + e.errCode);
 				}
 			});
+		},
+		checkLocation(){
+			let that = this;
+			console.log('--your platform is ' + uni.getSystemInfoSync().platform);
+			if(uni.getSystemInfoSync().platform == 'android'){
+				uni.authorize({
+					scope: 'scope.userLocation',
+					success() {
+						uni.getLocation({
+							type: 'wgs84',
+							success: function (res) {
+								console.log('当前位置的经度：' + res.longitude);
+								console.log('当前位置的纬度：' + res.latitude);
+								that.locationOpen = true;
+							},
+							fail(r){
+								console.log('------ location ---err--' +r);
+								that.locationOpen = false;
+							}
+						});
+					},
+					fail(){
+						console.log('------ refuse -----');
+					}
+				});
+			}
 		}
 	}
 }

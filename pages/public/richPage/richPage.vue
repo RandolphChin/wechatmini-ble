@@ -53,9 +53,9 @@
 		<view class="u-font-xl u-p-l-30 u-m-t-30 service-style">指令集</view>
 		<view>
 			<uni-list :border="false">
-			    <uni-list-item :border="false" :clickable="true" @click="invoke(1)" title="开机指令" ></uni-list-item>
-			    <uni-list-item :border="false" :clickable="true" @click="invoke(2)" title="关机指令" ></uni-list-item>
-			    <uni-list-item :border="false" :clickable="true"  @click="invoke(3)" title="重启指令" ></uni-list-item>
+			    <uni-list-item :border="false" :clickable="true" @click="invoke('开机指令')" title="开机指令" ></uni-list-item>
+			    <uni-list-item :border="false" :clickable="true" @click="invoke('关机指令')" title="关机指令" ></uni-list-item>
+			    <uni-list-item :border="false" :clickable="true"  @click="invoke('重启指令')" title="重启指令" ></uni-list-item>
 			</uni-list>
 		</view>
 	</view>
@@ -117,6 +117,8 @@ import Date from '@/static/datetime.js'
 			},
 			invoke(val){
 				console.log(val);
+				this.msg = val;
+				this.showMsg()
 			},
 			/**
 			 * 开启订阅特征值

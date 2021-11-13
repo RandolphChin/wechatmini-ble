@@ -79,12 +79,18 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "wx47b65fb0975cc63c",
+        "appid" : "wx2056a5cb7d4bfb81",
         "setting" : {
             "urlCheck" : false,
-            "postcss" : true
+            "postcss" : true,
+            "minified" : true
         },
-        "usingComponents" : true
+        "usingComponents" : true,
+        "permission" : {
+            "scope.userLocation" : {
+                "desc" : "蓝牙搜索需要定位功能"
+            }
+        }
     },
     "h5" : {
         "template" : "template.h5.html",

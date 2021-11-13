@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "Test",
+  "navigationBarTitleText": "海葵",
   "enablePullDownRefresh": false,
   "usingComponents": {
     "u-row": "/uview-ui/components/u-row/u-row",

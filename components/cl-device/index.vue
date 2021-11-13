@@ -21,7 +21,7 @@
 				</view>
 			</u-card>
 		</view>
-		<u-card :head-border-bottom="false" :show-head="false" @body-click="connectDevice(false,'58:80:3C:36:95:33','未知设备',-33)">
+		<!-- <u-card :head-border-bottom="false" :show-head="false" @body-click="connectDevice(false,'58:80:3C:36:95:33','未知设备',-33)">
 			<view slot="body">
 				<view class="u-flex u-row-between">
 					<view class="u-line-2">
@@ -38,7 +38,7 @@
 				</view>
 			
 			</view>
-		</u-card>
+		</u-card> -->
 	</view>
 </template>
 

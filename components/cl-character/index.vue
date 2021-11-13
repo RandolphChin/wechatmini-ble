@@ -17,7 +17,7 @@
 						</view>
 					</u-card>
 				</u-collapse-item>
-				<u-collapse-item title="item.serviceId" key="item.serviceId">
+				<!-- <u-collapse-item title="item.serviceId" key="item.serviceId">
 					<u-card :head-border-bottom="false" :show-head="false" key="sonItem.uuid" @body-click="nextDetail('88:34:46:52:34:45:334',example)">
 						<view slot="body">
 							<view class="u-flex u-row-between">
@@ -32,7 +32,7 @@
 						
 						</view>
 					</u-card>
-				</u-collapse-item>
+				</u-collapse-item> -->
 			</u-collapse>
 	</view>
 </template>
