@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "海葵星蓝牙",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "u-card": "/uview-ui/components/u-card/u-card",
-    "cl-character": "/components/cl-character/index"
-  }
-}

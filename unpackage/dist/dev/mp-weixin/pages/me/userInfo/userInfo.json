@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "Me",
-  "enablePullDownRefresh": true,
-  "usingComponents": {
-    "u-avatar": "/uview-ui/components/u-avatar/u-avatar"
-  }
-}
