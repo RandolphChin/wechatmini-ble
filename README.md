@@ -1,6 +1,6 @@
 # 介绍
 微信脚手架项目，基于 [惊悚的毛毛虫](https://gitee.com/ChenMuShan/uniapp-template)的uniapp-template项目
-
+低功耗蓝牙参考[一位愿意透露姓名的少侠](https://blog.csdn.net/qq_38734155/article/details/90693040)的这篇文章
 ### 添加功能
 1. 微信登录(微信登录后，后台返回token和用户信息给微信客户端)
 2. 访问权限页面A时，未登录则跳转至登录页面，登录成功后自动跳转至A页面
